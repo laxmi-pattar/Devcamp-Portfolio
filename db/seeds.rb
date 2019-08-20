@@ -19,8 +19,8 @@ end
 			title: "Portfolio_item#{portfolio_item}",
 			subtitle: "subtitle#{portfolio_item}",
 			body: "welcome to portfolio#{portfolio_item}",
-			main_image: "main_image",
-			thumb_image: "thumb_image")
+			main_image: "https://via.placeholder.com/600x400",
+			thumb_image: "https://via.placeholder.com/350x150")
 	end
 
 	puts "9 portfolioss created"
