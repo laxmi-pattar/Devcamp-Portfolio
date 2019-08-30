@@ -44,6 +44,8 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
