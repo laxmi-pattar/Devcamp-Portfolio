@@ -7,7 +7,12 @@ puts "3 topics are created"
 10.times do |blog|
 	Blog.create!(
 		title: "My blog post#{blog}",
-		body: "welcome to the blog#{blog}",
+		body: "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+		Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. 
+		Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+		Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+		Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. 
+		Morbi leo risus, porta ac consectetur ac, vestibulum at eros.",
 		topic_id: Topic.last.id)
 end
 
