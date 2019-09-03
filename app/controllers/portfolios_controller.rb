@@ -2,68 +2,71 @@ class PortfoliosController < ApplicationController
 	before_action :set_portfolio_item, only: [:edit, :update, :show, :destroy]
  # access all: [:show, :index, :angular], user: {except: [:destroy, :create, :new, :update, :edit]}, site_admin: :all
 
-	layout "portfolio"
-	def index
-		@portfolio_items = Portfolio.by_position
-	end
+ layout "portfolio"
+ def index
+ 	@portfolio_items = Portfolio.by_position
+ end
 
-	def angular
-		@angular_portfolio_items = Portfolio.angular
-	end
-	
-	def new
-		@portfolio_item = Portfolio.new
-		3.times { @portfolio_item.technologies.build }
-	end
+ def sort
+ end
 
-	def create
-		@portfolio_item = Portfolio.new(portfolio_params)
+ def angular
+ 	@angular_portfolio_items = Portfolio.angular
+ end
+ 
+ def new
+ 	@portfolio_item = Portfolio.new
+ 	3.times { @portfolio_item.technologies.build }
+ end
 
-		respond_to do |format|
-			if @portfolio_item.save
-				format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully created.' }
+ def create
+ 	@portfolio_item = Portfolio.new(portfolio_params)
 
-			else
-				format.html { render :new }
+ 	respond_to do |format|
+ 		if @portfolio_item.save
+ 			format.html { redirect_to portfolios_path, notice: 'Portfolio was successfully created.' }
 
-			end
-		end
-	end
+ 		else
+ 			format.html { render :new }
 
-	def edit
-	end
+ 		end
+ 	end
+ end
 
-	def update
-		respond_to do |format|
-			if @portfolio_item.update(portfolio_params)
-				format.html { redirect_to portfolios_path, notice: 'The record successfully updated.' }
+ def edit
+ end
 
-			else
-				format.html { render :edit }
+ def update
+ 	respond_to do |format|
+ 		if @portfolio_item.update(portfolio_params)
+ 			format.html { redirect_to portfolios_path, notice: 'The record successfully updated.' }
 
-			end
-		end
-	end
+ 		else
+ 			format.html { render :edit }
 
-	def show
-	end
+ 		end
+ 	end
+ end
+
+ def show
+ end
 
 
-	def destroy
-		
-		@portfolio_item.destroy
-		respond_to do |format|
-			format.html { redirect_to portfolios_url, notice: 'Record was successfully destroyed.' }
-		end
-	end
+ def destroy
+ 	
+ 	@portfolio_item.destroy
+ 	respond_to do |format|
+ 		format.html { redirect_to portfolios_url, notice: 'Record was successfully destroyed.' }
+ 	end
+ end
 
-	def set_portfolio_item
-		@portfolio_item = Portfolio.find(params[:id])
-	end
+ def set_portfolio_item
+ 	@portfolio_item = Portfolio.find(params[:id])
+ end
 
-	def portfolio_params
-		params.require(:portfolio).permit(:title, :subtitle, :body,
-			technologies_attributes: [:name])
-	end
+ def portfolio_params
+ 	params.require(:portfolio).permit(:title, :subtitle, :body, :main_image, :thumb_image,
+ 		technologies_attributes: [:name])
+ end
 end
 
