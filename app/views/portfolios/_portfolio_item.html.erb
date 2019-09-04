@@ -1,5 +1,5 @@
  	<div class="card picture" data-id="<%= portfolio_item.id %>">
- 		<%= image_tag portfolio_img(portfolio_item.thumb_image_url, 'thumb') %>
+ 		<%= image_tag portfolio_img(portfolio_item.thumb_image_url, 'thumb'), width: '100%' %>
 
  		<p class="card-text">
  			<div><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %></div><%= portfolio_item.subtitle %>
