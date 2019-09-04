@@ -42,10 +42,11 @@
   border: 0;
 }
 
+
 .card > img {
   margin-bottom: .75rem;
 }
-
+/*
 .card text {
   font-size: 85%
 }
@@ -61,4 +62,9 @@ footer p {
 
 .portfolio-container {
   padding-top: 30px;
+}
+
+.picture img {
+  width: 350px;
+  height: 200px;
 }
